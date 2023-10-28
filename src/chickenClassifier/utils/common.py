@@ -12,6 +12,21 @@ from typing import Any
 import base64
 
 
+def create_directories(path_to_directories: list, verbose=True):
+    """
+
+    :param path_to_directories: list of path of directories
+    :param verbose:
+    :return:
+    """
+    try:
+        for path in path_to_directories:
+            os.makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"created directory at :: {path}")
+    except Exception as ex:
+        logger.error(f"failed to create directories:: {ex}")
+
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
