@@ -3,7 +3,7 @@ import urllib.request as request
 import zipfile
 from chickenClassifier import logger
 from chickenClassifier.utils.common import get_size
-from chickenClassifier.entity import DataIngestionConfig
+from chickenClassifier.entity.config_entity import DataIngestionConfig
 from pathlib import Path
 
 
