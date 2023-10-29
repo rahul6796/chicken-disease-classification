@@ -48,7 +48,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
 
 
 @ensure_annotations
-def save_json(path:Path, data:dict):
+def save_json(path: Path, data: dict):
     """
 
     :param path: path to json file

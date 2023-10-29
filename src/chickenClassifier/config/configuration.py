@@ -3,7 +3,7 @@ import os.path
 from chickenClassifier.constant import *
 from chickenClassifier.utils.common import read_yaml, create_directories
 from chickenClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig
-from chickenClassifier.entity.config_entity import PrepareCallbacksConfig, TrainingConfig
+from chickenClassifier.entity.config_entity import PrepareCallbacksConfig, TrainingConfig, EvaluationConfig
 
 
 class ConfigurationManager:
@@ -81,6 +81,17 @@ class ConfigurationManager:
 
         )
         return training_config
+
+    def get_validation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model="artifacts/training/model.h5",
+            training_data="artifacts/data_ingestion/Chicken-fecal-images",
+            all_params=self.param,
+            params_image_size=self.param.IMAGE_SIZE,
+            params_batch_size=self.param.BATCH_SIZE
+
+        )
+        return eval_config
 
 
 

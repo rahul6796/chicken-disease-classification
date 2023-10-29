@@ -3,6 +3,7 @@ from chickenClassifier.pipeline.data_ingestion_pipeline import DataIngestionPipe
 from chickenClassifier.pipeline.prepare_base_model_pipeline import PrepareBaseModelPipeline
 from chickenClassifier.pipeline.prepare_callbacks_pipeline import PrepareCallbacksPipeline
 from chickenClassifier.pipeline.training_pipeline import ModelTrainingPipeline
+from chickenClassifier.pipeline.evaluation_pipeline import EvaluationPipeline
 
 
 STAGE_NAME = "Data Ingestion stage"
@@ -37,11 +38,22 @@ except Exception as ex:
 #     logger.error(f"failed to preparecallback :: {ex}")
 
 
-STAGE_NAME = "Model Training"
+# STAGE_NAME = "Model Training"
+#
+# try:
+#     logger.info(f"{STAGE_NAME}")
+#     model_training = ModelTrainingPipeline()
+#     model_training.main()
+# except Exception as ex:
+#     logger.error(f"failed to model training :: {ex}")
+#
+
+
+STAGE_NAME = "Model Evaluation"
 
 try:
     logger.info(f"{STAGE_NAME}")
-    model_training = ModelTrainingPipeline()
-    model_training.main()
+    model_evaluation = EvaluationPipeline()
+    model_evaluation.main()
 except Exception as ex:
     logger.error(f"failed to model training :: {ex}")
