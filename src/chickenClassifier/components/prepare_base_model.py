@@ -29,7 +29,7 @@ class PrepareBaseModel:
             for layer in model.layers:
                 model.trainable = False
         elif (freeze_till is not None) and (freeze_till > 0):
-            for layer in model.layers[:freeze_till]:
+            for layer in model.layers[:-freeze_till]:
                 model.trainable = False
 
         flatten_in = tf.keras.layers.Flatten()(model.output)
@@ -61,6 +61,7 @@ class PrepareBaseModel:
             freeze_till=None,
             learning_rate=self.config.params_learning_rate
         )
+        self.save_model(path=self.config.updated_base_model_path, model=self.full_model)
 
     @staticmethod
     def save_model(path: Path,
