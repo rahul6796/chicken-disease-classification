@@ -28,25 +28,24 @@ except Exception as ex:
     raise ex
 
 
-# STAGE_NAME = "Prepare callbacks stage"
-#
-# try:
-#     logger.info(f"{STAGE_NAME}")
-#     prepare_callbacks = PrepareCallbacksPipeline()
-#     prepare_callbacks.main()
-# except Exception as ex:
-#     logger.error(f"failed to preparecallback :: {ex}")
+STAGE_NAME = "Prepare callbacks stage"
+
+try:
+    logger.info(f"{STAGE_NAME}")
+    prepare_callbacks = PrepareCallbacksPipeline()
+    prepare_callbacks.main()
+except Exception as ex:
+    logger.error(f"failed to prepare-callback :: {ex}")
 
 
-# STAGE_NAME = "Model Training"
-#
-# try:
-#     logger.info(f"{STAGE_NAME}")
-#     model_training = ModelTrainingPipeline()
-#     model_training.main()
-# except Exception as ex:
-#     logger.error(f"failed to model training :: {ex}")
-#
+STAGE_NAME = "Model Training"
+
+try:
+    logger.info(f"{STAGE_NAME}")
+    model_training = ModelTrainingPipeline()
+    model_training.main()
+except Exception as ex:
+    logger.error(f"failed to model training :: {ex}")
 
 
 STAGE_NAME = "Model Evaluation"
