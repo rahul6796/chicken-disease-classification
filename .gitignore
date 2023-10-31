@@ -162,3 +162,5 @@ cython_debug/
 logs/**
 src/chickenClassifier.egg-info/**
 artifacts/*
+/.dvcignore
+.dvc/**
