@@ -12,5 +12,5 @@ class EvaluationPipeline:
         val_config = config.get_validation_config()
         evaluation = Evaluation(config=val_config)
         evaluation.evaluation()
-        evaluation.score()
+        evaluation.save_score()
 
